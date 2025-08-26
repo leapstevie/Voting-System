@@ -1,0 +1,236 @@
+@font-face {
+ font-family: "semreap";
+ src: url(KhmerOSsiemreap.ttf);
+}
+
+body {
+ background-image: url("picture/backgroud-water1.jpg");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: 100% 100%;
+}
+
+body {
+ font-family: "semreap";
+}
+
+header {
+ background-color: #000;
+}
+
+.top-bar {
+ background-color: #06C;
+ /* Adjusted to match the red bar in the image */
+ padding: 10px 0;
+}
+
+.top-bar .container {
+ display: flex;
+ align-items: center;
+}
+
+.logo img {
+ height: 50px;
+}
+
+nav {
+ margin-left: auto;
+}
+
+.nav {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ display: flex;
+}
+
+.nav-item {
+ margin-left: 20px;
+}
+
+.nav-link {
+ color: #fff;
+ /* Adjusted to match the text color */
+ text-decoration: none;
+ font-weight: bold;
+}
+
+.nav-link:hover {
+ text-decoration: underline;
+}
+
+.logo {
+ display: flex;
+ justify-content: center;
+}
+
+.news-feed {
+ max-width: 600px;
+ margin: 30px auto;
+ padding: 10px;
+}
+
+.post {
+ margin-bottom: 20px;
+ padding: 20px;
+}
+
+.post:last-child {
+ border-bottom: none;
+}
+
+.user-info {
+ display: flex;
+ align-items: center;
+ margin-bottom: 10px;
+ justify-content: center;
+}
+
+.user-avatar {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ margin-right: 10px;
+}
+
+.user-name {
+ font-weight: bold;
+ font-size: 18px;
+ margin-right: 10px;
+}
+
+.card {
+ border-radius: 15px;
+ margin-bottom: 15px;
+ padding: 15px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ background-color: #ffffff;
+}
+
+.post-content {
+ font-size: 18px;
+}
+
+.star-rating {
+ display: flex;
+ direction: row;
+ justify-content: center;
+ align-items: center;
+ margin-top: 10px;
+}
+
+.star {
+ font-size: 2rem;
+ cursor: pointer;
+ color: #ccc;
+ transition: color 0.2s;
+ padding: 0 18px;
+}
+
+.star.hover,
+.star.selected {
+ color: gold;
+}
+
+.table th, .table td {
+ font-size: 12px;
+ padding: 0 !important; /* Remove padding */
+ margin: 0 !important; /* Remove margin */
+}
+
+.star-rating .star {
+ font-size: 25px; 
+}
+
+
+
+
+/*------------------------------------------------------------------------ Mobile  Width  < 500 */
+@media only screen and (min-device-width: 300px) and (max-device-width: 500px) {
+ .user-name {
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.star-rating {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+  padding: 0 14px;
+}
+
+.star.hover,
+.star.selected {
+  color: gold;
+}
+
+.post-content {
+  font-size: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.name-department {
+  font-size: 16px;
+}
+
+.nav-item {
+  font-size: 16px;
+}
+
+.news-feed {
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.rate-title {
+  font-size: 10px;
+  padding-right: 0px;
+}
+
+.star-rating .star {
+  font-size: 15px; 
+}
+
+h6 {
+  font-size: 8px; 
+}
+
+rating-text {
+  font-size: 10px;
+}
+
+.table th, .table td {
+  font-size: 10px;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  margin: 0 !important; /* Remove margin */
+}
+
+.table th, .table td .space {
+  font-size: 10px;
+  padding-left: 5px !important;
+  padding-right: 0px !important;
+  margin: 0 !important; /* Remove margin */
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+}
