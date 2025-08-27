@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -12,5 +13,17 @@ class HomeController extends Controller
         return view('dashboard');
         // $admin = Auth::guard('admin')->user();
         // echo 'Welcome, ' . $admin->name . ' <a href="' . route('admin.logout') . '">Logout</a>';
+    }
+
+    public function TEmployee()
+    {
+        $employees = DB::table('TEmployee')->get();
+        return view('Admin.pages.TEmployee', compact('employees'));
+    }
+
+    public function TRecords()
+    {
+        $records = DB::table('TRecords')->get();
+        return view('Admin.pages.TRecords', compact('records'));
     }
 }

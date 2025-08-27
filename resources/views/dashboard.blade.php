@@ -23,7 +23,7 @@
         <div class="small-box card">
           <div class="inner">
             <h3>150</h3>
-            <p>Total Orders</p>
+            <p>TEmployee Total</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -37,7 +37,7 @@
         <div class="small-box card">
           <div class="inner">
             <h3>50</h3>
-            <p>Total Customers</p>
+            <p>TRecords Total</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -47,7 +47,7 @@
       </div>
 
       <!-- Total Sales Box -->
-      <div class="col-lg-4 col-6">
+      <!-- <div class="col-lg-4 col-6">
         <div class="small-box card">
           <div class="inner">
             <h3>$1000</h3>
@@ -58,7 +58,7 @@
           </div>
           <a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

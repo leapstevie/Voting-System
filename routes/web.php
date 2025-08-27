@@ -12,7 +12,8 @@ Route::post('/', [AdminLoginController::class, 'login'])->name('login.submit');
 // Group admin routes under /admin prefix
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
-
+    Route::get('TEmployee', [AdminHomeController::class, 'TEmployee'])->name('TEmployee');
+    Route::get('TRecords', [AdminHomeController::class, 'TRecords'])->name('TRecords');
 });
 
 // Group frontend routes under /frontend prefix
