@@ -18,5 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 // Group frontend routes under /frontend prefix
 Route::prefix('frontend')->name('frontend.')->group(function () {
-    Route::get('userRate', [FrontendHomeController::class, 'index'])->name('userRate');
+    Route::get('userRate', [FrontendHomeController::class, 'listHighLevelUsers'])->name('userRate');
+    Route::get('userRate/index', [FrontendHomeController::class, 'index'])->name('userRate.index');
+    Route::post('userRate/store', [FrontendHomeController::class, 'store'])->name('userRate.store');    
 });

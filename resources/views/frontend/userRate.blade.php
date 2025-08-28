@@ -7,7 +7,7 @@
     <title>Employee Vote</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    
+
     <!-- <style>
         @font-face {
             font-family: "semreap";
@@ -273,314 +273,186 @@
     </header>
     <div class="container news-feed">
         <div class="post">
-            <div class="card">
-                <div class="user-info">
-                    <!-- <img src="https://via.placeholder.com/40" class="user-avatar"> -->
-                    <span class="user-name">ស៊ិន ចន្ថា</span>
-                </div>
-                <div class="post-content" style="display: flex;justify-content: center;">
-                    អង្គភាពលេខាធិការសហគ្រាស
-                </div>
-                <hr class="m-1">
-                <div class="row">
-                    <div class="col-3 mt-3 ">
-                        <div class="rate-title">ការវាយតំលៃ</div>
-                    </div>
-                    <div class="col-7 pl-0">
-                        <div class="container m-0 p-0">
-                            <table class="table table-borderless text-center">
-                                <thead>
-                                    <tr class="rate-title p-0">
-                                        <td>អាក្រក់</td>
-                                        <td>មធ្យម</td>
-                                        <td>ធម្មតា</td>
-                                        <td>ល្អ</td>
-                                        <td>ល្អណាស់</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="rate-title">
-                                    <tr>
-                                        <td>0%</td>
-                                        <td>25%</td>
-                                        <td>50%</td>
-                                        <td>75%</td>
-                                        <td>100%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="m-1">
-                <div class="row">
-                    <div class="col-3 mt-3">
-                        <h6>សមត្ថភាព</h6>
-                    </div>
-                    <div class="col-7 pl-0">
-                        <div class="star-rating equity" style="display: flex;justify-content: flex-start;">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 mt-3">
-                        <h6>គុណធម៌</h6>
-                    </div>
-                    <div class="col-7 pl-0">
-                        <div class="star-rating equity" style="display: flex;justify-content: flex-start;">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-3 mt-3">
-                        <h6>សកម្មភាពការងារ</h6>
-                    </div>
-                    <div class="col-7 pl-0">
-                        <div class="star-rating equity" style="display: flex;justify-content: flex-start;">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="user-info">
-                    <!-- <img src="https://via.placeholder.com/40" class="user-avatar"> -->
-                    <span class="user-name">ស៊ិន ចន្ថា</span>
-                </div>
-                <div class="post-content" style="display: flex;justify-content: center;">
-                    អង្គភាពលេខាធិការសហគ្រាស
-                </div>
-
-                <div class="row">
-                    <div class="col-4 mt-3">
-                        <div>ការវាយតំលៃ</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="star-rating equity">
-                            <span class="ml-2">0%</span>
-                            <span class="ml-3">25%</span>
-                            <span class="ml-3">50%</span>
-                            <span class="ml-3">75%</span>
-                            <span class="ml-3">100%</span>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-4 mt-3">
-                        <h6>សមត្ថភាព</h6>
-                    </div>
-                    <div class="col-6">
-                        <div class="star-rating equity">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 mt-3">
-                        <h6>គុណធម៌</h6>
-                    </div>
-                    <div class="col-6">
-                        <div class="star-rating equity">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-4 mt-3">
-                        <h6>សកម្មភាពការងារ</h6>
-                    </div>
-                    <div class="col-6">
-                        <div class="star-rating equity">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="user-info">
-                    <!-- <img src="https://via.placeholder.com/40" class="user-avatar"> -->
-                    <span class="user-name">ស៊ិន ចន្ថា</span>
-                </div>
-                <div class="post-content" style="display: flex;justify-content: center;">
-                    អង្គភាពលេខាធិការសហគ្រាស
-                </div>
-                <div class="row">
-                    <div class="col-12 mt-3">
-                        <table class="table table-bordered">
-                            <tr>
-                                <td colspan="2">ការវាយតំលៃ</td>
-                                <td>0%</td>
-                                <td>25%</td>
-                                <td>50%</td>
-                                <td>75%</td>
-                                <td>100%</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 mt-3">
-                        <h6>សមត្ថភាព</h6>
-                    </div>
-                    <div class="col-8">
-                        <div class="star-rating equity">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 mt-3">
-                        <h6>គុណធម៌</h6>
-                    </div>
-                    <div class="col-8">
-                        <div class="star-rating equity">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-3 mt-3">
-                        <h6>សកម្មភាពការងារ</h6>
-                    </div>
-                    <div class="col-8">
-                        <div class="star-rating equity">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                            <div class="rating-text"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @if(isset($employees) && $employees->count() > 0)
+            <table class="table table-hover text-nowrap">
+                <thead>
+                    <tr>
+                        <th>Entry_No</th>
+                        <th>EmployeeID</th>
+                        <th>PPWSA_Code</th>
+                        <th>EmployeeName_KH</th>
+                        <th>EmployeeName_EN</th>
+                        <th>Department</th>
+                        <th>Office</th>
+                        <th>Section</th>
+                        <th>D_Level</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Remark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($employees as $emp)
+                    <tr>
+                        <td>{{ $emp->Entry_No }}</td>
+                        <td>{{ $emp->EmployeeID }}</td>
+                        <td>{{ $emp->PPWSA_Code }}</td>
+                        <td>{{ $emp->EmployeeName_KH }}</td>
+                        <td>{{ $emp->EmployeeName_EN }}</td>
+                        <td>{{ $emp->Department }}</td>
+                        <td>{{ $emp->Office }}</td>
+                        <td>{{ $emp->Section }}</td>
+                        <td>{{ $emp->D_Level }}</td>
+                        <td>{{ $emp->Gender }}</td>
+                        <td>{{ $emp->Status }}</td>
+                        <td>{{ $emp->Remark }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @else
+            <p>No employees found.</p>
+            @endif
 
 
+            <form action="{{ route('frontend.userRate.store') }}" method="POST">
+    @csrf
+    <input type="hidden" name="employee_id" value="{{ session('EmployeeID') }}">
+    <input type="hidden" name="ppwsa_code" value="{{ session('EmployeeCode') }}">
+    <input type="hidden" name="employee_name_kh" value="{{ session('EmployeeName_KH') }}">
+    <input type="hidden" name="department" value="{{ session('Dept_Code') }}">
+    <input type="hidden" name="office" value="{{ session('Office') }}">
+
+    @foreach($employees as $index => $emp)
+    <div class="card mb-3 p-3">
+        <input type="hidden" name="votes[{{ $index }}][candidate_id]" value="{{ $emp->EmployeeID }}">
+        <input type="hidden" name="votes[{{ $index }}][candidate_name]" value="{{ $emp->EmployeeName_KH }}">
+
+        <div class="user-info">
+            <span class="user-name">{{ $emp->EmployeeName_KH }}</span>
+        </div>
+        <div class="post-content" style="display: flex;justify-content: center;">
+            {{ $emp->DepartmentName ?? '' }}
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="script.js"></script>
-        <script>
-            $(document).ready(function() {
-                // Texts corresponding to the rating values
-                var ratingsText = [
-                    "",
-                    "អាក្រក់",
-                    "មធ្យម",
-                    "ធម្មតា",
-                    "ល្អ",
-                    "ល្អណាស់"
-                ];
+        <div class="row">
+            <div class="col-12 mt-3">
+                <table class="table table-bordered">
+                    <tr>
+                        <td colspan="2">ការវាយតំលៃ</td>
+                        <td>0%</td>
+                        <td>25%</td>
+                        <td>50%</td>
+                        <td>75%</td>
+                        <td>100%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-                // Event listener for mouseover on stars
-                $('.star').on('mouseover', function() {
-                    // Get the rating value from the star's data-value attribute
-                    var index = $(this).data('value');
-                    // Highlight stars up to the hovered one within the same star-rating container
-                    highlightStars(index, $(this).closest('.star-rating'));
-                });
+        @php
+            $criteria = ['samattapheap' => 'សមត្ថភាព', 'kountor' => 'គុណធម៌', 'sakammapeap' => 'សកម្មភាពការងារ'];
+        @endphp
 
-                // Event listener for mouseout from stars
-                $('.star').on('mouseout', function() {
-                    // Clear highlight from all stars within the same star-rating container
-                    clearHighlight($(this).closest('.star-rating'));
-                    // Highlight selected stars again within the same container
-                    highlightSelectedStars($(this).closest('.star-rating'));
-                });
+        @foreach($criteria as $field => $label)
+        <div class="row">
+            <div class="col-3 mt-3">
+                <h6>{{ $label }}</h6>
+            </div>
+            <div class="col-8">
+                <div class="star-rating equity" data-index="{{ $index }}" data-field="{{ $field }}">
+                    @for($i = 1; $i <= 5; $i++)
+                        <span class="star" data-value="{{ $i }}">&#9733;</span>
+                    @endfor
+                    <input type="hidden" name="votes[{{ $index }}][{{ $field }}]" value="0">
+                    <div class="rating-text"></div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    @endforeach
 
-                // Event listener for click on stars
-                $('.star').on('click', function() {
-                    // Get the rating value from the star's data-value attribute
-                    var index = $(this).data('value');
-                    // Mark stars up to the clicked one as selected within the same container
-                    selectStars(index, $(this).closest('.star-rating'));
-                    // Update the rating text based on the selected value within the same container
-                    updateRatingText(index, $(this).closest('.star-rating'));
-                });
+    <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary">Submit All Votes</button>
+    </div>
+</form>
 
-                // Function to highlight stars up to the given index within the container
-                function highlightStars(index, container) {
-                    clearHighlight(container);
-                    for (var i = 1; i <= index; i++) {
-                        container.find('.star[data-value="' + i + '"]').addClass('hover');
-                    }
-                }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var ratingsText = ["", "អាក្រក់", "មធ្យម", "ធម្មតា", "ល្អ", "ល្អណាស់"];
 
-                // Function to clear the highlight from all stars within the container
-                function clearHighlight(container) {
-                    container.find('.star').removeClass('hover');
-                }
+    $('.star').on('mouseover', function() {
+        var index = $(this).data('value');
+        highlightStars(index, $(this).closest('.star-rating'));
+    });
 
-                // Function to mark stars up to the given index as selected within the container
-                function selectStars(index, container) {
-                    container.find('.star').removeClass('selected');
-                    for (var i = 1; i <= index; i++) {
-                        container.find('.star[data-value="' + i + '"]').addClass('selected');
-                    }
-                }
+    $('.star').on('mouseout', function() {
+        clearHighlight($(this).closest('.star-rating'));
+        highlightSelectedStars($(this).closest('.star-rating'));
+    });
 
-                // Function to re-highlight the stars that have been marked as selected within the container
-                function highlightSelectedStars(container) {
-                    container.find('.star.selected').each(function() {
-                        var index = $(this).data('value');
-                        highlightStars(index, container);
-                    });
-                }
+    $('.star').on('click', function() {
+        var index = $(this).data('value');
+        var container = $(this).closest('.star-rating');
+        var field = container.data('field');
+        var empIndex = container.data('index');
 
-                // Function to update the rating text based on the selected index within the container
-                function updateRatingText(index, container) {
-                    container.find('.rating-text').text(ratingsText[index]);
-                }
-            });
-        </script>
+        selectStars(index, container);
+        updateRatingText(index, container);
+        container.find(`input[name="votes[${empIndex}][${field}]"]`).val(index);
+    });
+
+    function highlightStars(index, container) {
+        clearHighlight(container);
+        for (var i = 1; i <= index; i++) {
+            container.find('.star[data-value="' + i + '"]').addClass('hover');
+        }
+    }
+
+    function clearHighlight(container) {
+        container.find('.star').removeClass('hover');
+    }
+
+    function selectStars(index, container) {
+        container.find('.star').removeClass('selected');
+        for (var i = 1; i <= index; i++) {
+            container.find('.star[data-value="' + i + '"]').addClass('selected');
+        }
+    }
+
+    function highlightSelectedStars(container) {
+        container.find('.star.selected').each(function() {
+            var index = $(this).data('value');
+            highlightStars(index, container);
+        });
+    }
+
+    function updateRatingText(index, container) {
+        container.find('.rating-text').text(ratingsText[index]);
+    }
+});
+</script>
+
+<style>
+.star {
+    font-size: 25px;
+    color: #ccc;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.star.hover,
+.star.selected {
+    color: #ffc107;
+}
+.rating-text {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+}
+</style>
+
 </body>
 
 </html>
