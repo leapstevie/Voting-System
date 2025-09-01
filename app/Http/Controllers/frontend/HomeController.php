@@ -30,74 +30,74 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        $employeeId   = $request->employee_id;
-        $ppwsaCode    = $request->ppwsa_code;
-        $employeeName = $request->employee_name_kh;
-        $department   = $request->department;
-        $office       = $request->office;
-        $year         = date('Y');
-        $time         = date('H:i:s');
+        $employeeId = $request->employee_id;
+        $department = $request->department;
+        $office     = $request->office;
+        $year       = date('Y');
+        $voteDate = date('Y-m-d H:i:s');
+
+        // insert first to get EmployeeID
+        $employee = DB::table('TEmployee')
+            ->where('EmployeeID', $employeeId)
+            ->first();
 
         $insertData = [];
 
-        $maxVoteId = DB::table('TRecords')->max('Vote_ID') ?? 0;
-
         foreach ($request->votes as $vote) {
-            $maxVoteId++;
             $voteCode = '*' . $employeeId . '1' . date('His') . '*';
-
             $insertData[] = [
-                'Vote_ID'         => $maxVoteId,
+                'Vote_ID'         => 1,
                 'EmployeeID'      => $employeeId,
-                'EmployeeCode'    => $ppwsaCode,
-                'EmployeeName_KH' => $employeeName,
+                'EmployeeCode'    => $employee->PPWSA_Code,
+                'EmployeeName_KH' => $employee->EmployeeName_KH,
                 'Department'      => $department,
                 'Office'          => $office,
                 'Vote_Type'       => 1,
                 'Candidate'       => $vote['candidate_name'],
                 'Vote_Option'     => $vote['samattapheap'],
                 'Year'            => $year,
-                'Vote_Time'       => $time,
-                 'Time'            => $time,  
+                'Vote_Time'       => 1,
+                'Time'            => 1,
                 'Status'          => 'VOTE',
+                'Vote_Date'       => $voteDate,
                 'Vote_Code'       => $voteCode,
                 'Can_ID'          => $vote['candidate_id'],
             ];
 
-            $maxVoteId++;
             $insertData[] = [
-                'Vote_ID'         => $maxVoteId,
+                'Vote_ID'         => 2,
                 'EmployeeID'      => $employeeId,
-                'EmployeeCode'    => $ppwsaCode,
-                'EmployeeName_KH' => $employeeName,
+                'EmployeeCode'    => $employee->PPWSA_Code,
+                'EmployeeName_KH' => $employee->EmployeeName_KH,
                 'Department'      => $department,
                 'Office'          => $office,
                 'Vote_Type'       => 2,
                 'Candidate'       => $vote['candidate_name'],
                 'Vote_Option'     => $vote['kountor'],
                 'Year'            => $year,
-                'Vote_Time'       => $time,
-                 'Time'            => $time,  
+                'Vote_Time'       => 1,
+                'Time'            => 1,
                 'Status'          => 'VOTE',
+                'Vote_Date'       => $voteDate,
                 'Vote_Code'       => $voteCode,
                 'Can_ID'          => $vote['candidate_id'],
             ];
 
-            $maxVoteId++;
             $insertData[] = [
-                'Vote_ID'         => $maxVoteId,
+                'Vote_ID'         => 3,
                 'EmployeeID'      => $employeeId,
-                'EmployeeCode'    => $ppwsaCode,
-                'EmployeeName_KH' => $employeeName,
+                'EmployeeCode'    => $employee->PPWSA_Code,
+                'EmployeeName_KH' => $employee->EmployeeName_KH,
                 'Department'      => $department,
                 'Office'          => $office,
                 'Vote_Type'       => 3,
                 'Candidate'       => $vote['candidate_name'],
                 'Vote_Option'     => $vote['sakammapeap'],
                 'Year'            => $year,
-                'Vote_Time'       => $time,
-                 'Time'            => $time,  
+                'Vote_Time'       => 1,
+                'Time'            => 1,
                 'Status'          => 'VOTE',
+                'Vote_Date'       => $voteDate,
                 'Vote_Code'       => $voteCode,
                 'Can_ID'          => $vote['candidate_id'],
             ];

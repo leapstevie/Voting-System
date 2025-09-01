@@ -310,148 +310,150 @@
                     @endforeach
                 </tbody>
             </table>
-            @else
-            <p>No employees found.</p>
-            @endif
-
 
             <form action="{{ route('frontend.userRate.store') }}" method="POST">
-    @csrf
-    <input type="hidden" name="employee_id" value="{{ session('EmployeeID') }}">
-    <input type="hidden" name="ppwsa_code" value="{{ session('EmployeeCode') }}">
-    <input type="hidden" name="employee_name_kh" value="{{ session('EmployeeName_KH') }}">
-    <input type="hidden" name="department" value="{{ session('Dept_Code') }}">
-    <input type="hidden" name="office" value="{{ session('Office') }}">
+                @csrf
+                <!-- Hidden inputs for voter info -->
+                <input type="hidden" name="employee_id" value="{{ session('EmployeeID') }}">
+                <input type="hidden" name="ppwsa_code" value="{{ session('EmployeeCode') }}">
+                <input type="hidden" name="employee_name_kh" value="{{ session('EmployeeName_KH') }}">
+                <input type="hidden" name="department" value="{{ session('Dept_Code') }}">
+                <input type="hidden" name="office" value="{{ session('Office') }}">
 
-    @foreach($employees as $index => $emp)
-    <div class="card mb-3 p-3">
-        <input type="hidden" name="votes[{{ $index }}][candidate_id]" value="{{ $emp->EmployeeID }}">
-        <input type="hidden" name="votes[{{ $index }}][candidate_name]" value="{{ $emp->EmployeeName_KH }}">
+                @foreach($employees as $index => $emp)
+                <div class="card mb-3 p-3">
+                    <input type="hidden" name="votes[{{ $index }}][candidate_id]" value="{{ $emp->EmployeeID }}">
+                    <input type="hidden" name="votes[{{ $index }}][candidate_name]" value="{{ $emp->EmployeeName_KH }}">
 
-        <div class="user-info">
-            <span class="user-name">{{ $emp->EmployeeName_KH }}</span>
-        </div>
-        <div class="post-content" style="display: flex;justify-content: center;">
-            {{ $emp->DepartmentName ?? '' }}
-        </div>
+                    <div class="user-info">
+                        <span class="user-name">{{ $emp->EmployeeName_KH }}</span>
+                    </div>
+                    <div class="post-content" style="display: flex;justify-content: center;">
+                        {{ $emp->DepartmentName ?? '' }}
+                    </div>
 
-        <div class="row">
-            <div class="col-12 mt-3">
-                <table class="table table-bordered">
-                    <tr>
-                        <td colspan="2">ការវាយតំលៃ</td>
-                        <td>0%</td>
-                        <td>25%</td>
-                        <td>50%</td>
-                        <td>75%</td>
-                        <td>100%</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td colspan="2">ការវាយតំលៃ</td>
+                                    <td>0%</td>
+                                    <td>25%</td>
+                                    <td>50%</td>
+                                    <td>75%</td>
+                                    <td>100%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
 
-        @php
-            $criteria = ['samattapheap' => 'សមត្ថភាព', 'kountor' => 'គុណធម៌', 'sakammapeap' => 'សកម្មភាពការងារ'];
-        @endphp
+                    @php
+                    $criteria = ['samattapheap' => 'សមត្ថភាព', 'kountor' => 'គុណធម៌', 'sakammapeap' => 'សកម្មភាពការងារ'];
+                    @endphp
 
-        @foreach($criteria as $field => $label)
-        <div class="row">
-            <div class="col-3 mt-3">
-                <h6>{{ $label }}</h6>
-            </div>
-            <div class="col-8">
-                <div class="star-rating equity" data-index="{{ $index }}" data-field="{{ $field }}">
-                    @for($i = 1; $i <= 5; $i++)
-                        <span class="star" data-value="{{ $i }}">&#9733;</span>
-                    @endfor
-                    <input type="hidden" name="votes[{{ $index }}][{{ $field }}]" value="0">
-                    <div class="rating-text"></div>
+                    @foreach($criteria as $field => $label)
+                    <div class="row">
+                        <div class="col-3 mt-3">
+                            <h6>{{ $label }}</h6>
+                        </div>
+                        <div class="col-8">
+                            <div class="star-rating equity" data-index="{{ $index }}" data-field="{{ $field }}">
+                                @for($i = 1; $i <= 5; $i++)
+                                    <span class="star" data-value="{{ $i }}">&#9733;</span>
+                                    @endfor
+                                    <input type="hidden" name="votes[{{ $index }}][{{ $field }}]" value="0">
+                                    <div class="rating-text"></div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-    @endforeach
+                @endforeach
+                @else
+                <p>No employees found.</p>
+                @endif
 
-    <div class="text-center mt-3">
-        <button type="submit" class="btn btn-primary">Submit All Votes</button>
-    </div>
-</form>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Submit All Votes</button>
+                </div>
+            </form>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
-    var ratingsText = ["", "អាក្រក់", "មធ្យម", "ធម្មតា", "ល្អ", "ល្អណាស់"];
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    var ratingsText = ["", "អាក្រក់", "មធ្យម", "ធម្មតា", "ល្អ", "ល្អណាស់"];
 
-    $('.star').on('mouseover', function() {
-        var index = $(this).data('value');
-        highlightStars(index, $(this).closest('.star-rating'));
-    });
+                    $('.star').on('mouseover', function() {
+                        var index = $(this).data('value');
+                        highlightStars(index, $(this).closest('.star-rating'));
+                    });
 
-    $('.star').on('mouseout', function() {
-        clearHighlight($(this).closest('.star-rating'));
-        highlightSelectedStars($(this).closest('.star-rating'));
-    });
+                    $('.star').on('mouseout', function() {
+                        clearHighlight($(this).closest('.star-rating'));
+                        highlightSelectedStars($(this).closest('.star-rating'));
+                    });
 
-    $('.star').on('click', function() {
-        var index = $(this).data('value');
-        var container = $(this).closest('.star-rating');
-        var field = container.data('field');
-        var empIndex = container.data('index');
+                    $('.star').on('click', function() {
+                        var index = $(this).data('value');
+                        var container = $(this).closest('.star-rating');
+                        var field = container.data('field');
+                        var empIndex = container.data('index');
 
-        selectStars(index, container);
-        updateRatingText(index, container);
-        container.find(`input[name="votes[${empIndex}][${field}]"]`).val(index);
-    });
+                        selectStars(index, container);
+                        updateRatingText(index, container);
+                        container.find(`input[name="votes[${empIndex}][${field}]"]`).val(index);
+                    });
 
-    function highlightStars(index, container) {
-        clearHighlight(container);
-        for (var i = 1; i <= index; i++) {
-            container.find('.star[data-value="' + i + '"]').addClass('hover');
-        }
-    }
+                    function highlightStars(index, container) {
+                        clearHighlight(container);
+                        for (var i = 1; i <= index; i++) {
+                            container.find('.star[data-value="' + i + '"]').addClass('hover');
+                        }
+                    }
 
-    function clearHighlight(container) {
-        container.find('.star').removeClass('hover');
-    }
+                    function clearHighlight(container) {
+                        container.find('.star').removeClass('hover');
+                    }
 
-    function selectStars(index, container) {
-        container.find('.star').removeClass('selected');
-        for (var i = 1; i <= index; i++) {
-            container.find('.star[data-value="' + i + '"]').addClass('selected');
-        }
-    }
+                    function selectStars(index, container) {
+                        container.find('.star').removeClass('selected');
+                        for (var i = 1; i <= index; i++) {
+                            container.find('.star[data-value="' + i + '"]').addClass('selected');
+                        }
+                    }
 
-    function highlightSelectedStars(container) {
-        container.find('.star.selected').each(function() {
-            var index = $(this).data('value');
-            highlightStars(index, container);
-        });
-    }
+                    function highlightSelectedStars(container) {
+                        container.find('.star.selected').each(function() {
+                            var index = $(this).data('value');
+                            highlightStars(index, container);
+                        });
+                    }
 
-    function updateRatingText(index, container) {
-        container.find('.rating-text').text(ratingsText[index]);
-    }
-});
-</script>
+                    function updateRatingText(index, container) {
+                        container.find('.rating-text').text(ratingsText[index]);
+                    }
+                });
+            </script>
 
-<style>
-.star {
-    font-size: 25px;
-    color: #ccc;
-    cursor: pointer;
-    margin-right: 5px;
-}
-.star.hover,
-.star.selected {
-    color: #ffc107;
-}
-.rating-text {
-    display: inline-block;
-    margin-left: 10px;
-    font-weight: bold;
-}
-</style>
+            <style>
+                .star {
+                    font-size: 25px;
+                    color: #ccc;
+                    cursor: pointer;
+                    margin-right: 5px;
+                }
+
+                .star.hover,
+                .star.selected {
+                    color: #ffc107;
+                }
+
+                .rating-text {
+                    display: inline-block;
+                    margin-left: 10px;
+                    font-weight: bold;
+                }
+            </style>
 
 </body>
 

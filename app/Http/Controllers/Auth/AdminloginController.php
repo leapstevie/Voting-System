@@ -19,14 +19,15 @@ class AdminLoginController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        // check Employee table when enter personal ID and password
+        //EmployeeID /Password matches the adminname from the form
         $employee = DB::table('TEmployee')
             ->where('EmployeeID', $request->adminname)
             ->where('Password', $request->password)
             ->first();
 
         if ($employee) {
-            
+
+            // Store necessary info in session testing in login to the table TEmployee
             session([
                 'EmployeeID' => $employee->EmployeeID,
                 'Office' => $employee->Office,
@@ -36,7 +37,7 @@ class AdminLoginController extends Controller
             return redirect()->route('frontend.userRate');
         }
 
-        // if nothing matched → back to login page
+       
         return redirect()->route('login');
     }
 }
